@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送信完了</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>お問い合わせありがとうございました！</h1>
+        <p>ご記入いただいた内容を受け付けました。<br>
+        お問い合わせの確認が完了しました。<br>
+        ご返信までしばらくお待ちください。</p>
+        <a href="{{ url_for('contact') }}">戻る</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>お問い合わせフォーム</title>
+  <!-- BootstrapのCDNを追加 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+  <h1 class="mb-4">お問い合わせフォーム</h1>
+
+  <!-- フラッシュメッセージの表示 -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert alert-info">
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <form method="post" class="needs-validation" novalidate>
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+      {{ form.name.label(class="form-label") }}
+      {{ form.name(class="form-control") }}
+      {% if form.name.errors %}
+        <div class="text-danger">{{ form.name.errors[0] }}</div>
+      {% endif %}
+    </div>
+
+    <div class="mb-3">
+      {{ form.email.label(class="form-label") }}
+      {{ form.email(class="form-control") }}
+      {% if form.email.errors %}
+        <div class="text-danger">{{ form.email.errors[0] }}</div>
+      {% endif %}
+    </div>
+
+    <div class="mb-3">
+      {{ form.inquiry.label(class="form-label") }}
+      {{ form.inquiry(class="form-control", rows=5) }}
+      {% if form.inquiry.errors %}
+        <div class="text-danger">{{ form.inquiry.errors[0] }}</div>
+      {% endif %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">送信</button>
+  </form>
+
+  <!-- BootstrapのJS（バリデーション機能を有効にするため） -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

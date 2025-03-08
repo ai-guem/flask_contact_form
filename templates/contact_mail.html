@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ内容</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .footer {
+            font-size: 12px;
+            text-align: center;
+            color: #777;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>お問い合わせがありました</h1>
+        <p><strong>名前:</strong> {{ username }}</p>
+        <p><strong>メールアドレス:</strong> {{ email }}</p>
+        <p><strong>お問い合わせ内容:</strong></p>
+        <p>{{ description }}</p>
+
+        <div class="footer">
+            <p>このメールは自動的に送信されています。返信はご遠慮ください。</p>
+        </div>
+    </div>
+</body>
+</html>
